@@ -98,7 +98,7 @@ namespace GuardianEyeMovil.ViewModels.Camara
                 {
                     Ubicacion = Ubicacion,
                     Estado = Estado,
-                    Modelo = Modelo,
+                    Modelo = Modelo
                 };
 
                 Uri Request = new Uri("http://guardianeyeapi.somee.com/Api/Camara/" + Id);
@@ -131,6 +131,7 @@ namespace GuardianEyeMovil.ViewModels.Camara
         #endregion
         #region COMANDOS
         public ICommand EditarCamaraCommand => new Command(async () => await EditarCamara());
+        public ICommand EliminarCamaraCommand => new Command(async () => await EliminarCamara());
 
         #endregion
 
