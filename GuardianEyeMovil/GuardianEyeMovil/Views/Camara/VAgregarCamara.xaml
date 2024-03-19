@@ -4,56 +4,59 @@
              x:Class="GuardianEyeMovil.Views.Camara.VAgregarCamara"
              Title="Agregar Cámara"
              BackgroundColor="#141414">
+    
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout VerticalOptions="FillAndExpand"
-                         Spacing="10"
-                         Padding="20"
-                         BackgroundColor="#141414">
+        <StackLayout VerticalOptions="FillAndExpand"
+                         BackgroundColor="#141414"
+                         Margin="30,20,20,30">
 
-                <Label Text="Ubicacion:"
-                       FontSize="18"
+            <Label Text="Ubicacion:"
+                       FontSize="17"
                        TextColor="White"
-                       HorizontalOptions="Start" />
-                <Entry Placeholder="Ingrese la ubicacion de la Camara"
-                       FontSize="16"
+                       HorizontalOptions="Start"
+                   FontAttributes="Bold"/>
+            <Entry Placeholder="Ingrese la ubicacion de la Camara"
+                       FontSize="17"
+                       PlaceholderColor="White"
                        TextColor="White"
                        HorizontalOptions="FillAndExpand"
                        x:Name="UbicacionCamaraEntry"
                        Text="{Binding Ubicacion}"/>
 
-                <Label Text="Estado:"
-                       FontSize="18"
+            <Label Text="Estado:"
+                       FontSize="17"
                        TextColor="White"
                        HorizontalOptions="Start"
                        VerticalOptions="Start" 
-                       />
-                <Entry Placeholder="Ingrese el estado de la camara"
-                       FontSize="16"
+                        FontAttributes="Bold"/>
+            <Entry Placeholder="Ingrese el estado de la camara"
+                       FontSize="17"
                        TextColor="White"
                        HorizontalOptions="FillAndExpand"
                        x:Name="EstadoCamaraEntry"
+                       PlaceholderColor="White"
                        Text="{Binding Estado}"/>
 
-                <Label Text="Modelo:"
-                       FontSize="18"
+            <Label Text="Modelo:"
+                       FontSize="17"
                        TextColor="White"
                        HorizontalOptions="Start"
                        VerticalOptions="Start" 
-                       />
-                <Entry Placeholder="Ingrese el modelo de la camara"
-                       FontSize="16"
+                        FontAttributes="Bold"/>
+            <Entry Placeholder="Ingrese el modelo de la camara"
+                       FontSize="17"
                        TextColor="White"
                        HorizontalOptions="FillAndExpand"
                        x:Name="ModeloCamaraEntry"
+                       PlaceholderColor="White"
                        Text="{Binding Modelo}"/>
 
-                <Button Text="Agregar Camara"
-                    BackgroundColor="Gray"
+            <Button Text="Agregar Camara"
+                    BackgroundColor="#064686"
                     TextColor="White"
-                    Command="{Binding AgregarCamaraCommand}"
-                  />
-            </StackLayout>
-        </ScrollView>
+                        CornerRadius="20"
+                        Margin="10,20,10,0"
+                    Command="{Binding AgregarCamaraCommand}"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

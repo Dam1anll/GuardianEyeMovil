@@ -15,10 +15,7 @@
                  BackgroundColor="Gray"
                  HorizontalOptions="FillAndExpand" Margin="0,2,0,0" />
 
-                <Label Text="{Binding Id}"
-               FontSize="18"
-               TextColor="White"/>
-                <Label Text="Nombre de la camara"
+               <Label Text="Nombre de la camara"
                FontSize="18"
                TextColor="White"
                HorizontalOptions="Start" FontAttributes="Bold"/>
