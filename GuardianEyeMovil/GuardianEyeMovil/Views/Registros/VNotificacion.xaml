@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.Registros.VNotificacion"
+             Title="Notificación">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#141414">
+
+            <StackLayout>
+
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Fecha: " Grid.Row="0" Grid.Column="0" TextColor="#1da1f2" FontSize="17" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="13/02/2024" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" Margin="-100,0,0,0"/>
+                    <Label Text="Hora: " Grid.Row="1" Grid.Column="0" TextColor="#1da1f2" FontSize="17" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="12:34 am" Grid.Row="1" Grid.Column="1" TextColor="White" FontSize="17" Margin="-100,0,0,0"/>
+                </Grid>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <StackLayout Margin="20,10,20,0">
+                    <Label Text="Mensaje: " TextColor="#1da1f2" FontSize="17" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Label TextColor="White" FontSize="17" Margin="20,0,20,0" VerticalTextAlignment="Center">
+                        Se ha detectado actividad sospechosa en su propiedad. Revise cuidadosamente el área afectada y considere reforzar la seguridad. Contacte a las autoridades si es necesario.
+                    </Label>
+                </StackLayout>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <StackLayout>
+                    <Label Text="Imagen: " TextColor="#1da1f2" FontSize="17" FontAttributes="Bold" Margin="20,10,20,0"/>
+                    <Image Source="https://i.ibb.co/wYkLRys/Image-Pasted-2019-09-10-at-17-52-38-png-3.png" Margin="0,10,0,0" HeightRequest="150"/>
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

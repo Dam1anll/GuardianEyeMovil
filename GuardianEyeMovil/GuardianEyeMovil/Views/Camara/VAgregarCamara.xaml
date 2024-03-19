@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.Camara.VAgregarCamara"
+             Title="Agregar Cámara"
+             BackgroundColor="#141414">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand"
+                         Spacing="10"
+                         Padding="20"
+                         BackgroundColor="#141414">
+
+                <Label Text="Ubicacion:"
+                       FontSize="18"
+                       TextColor="White"
+                       HorizontalOptions="Start" />
+                <Entry Placeholder="Ingrese la ubicacion de la Camara"
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="FillAndExpand"
+                       x:Name="UbicacionCamaraEntry"
+                       Text="{Binding Ubicacion}"/>
+
+                <Label Text="Estado:"
+                       FontSize="18"
+                       TextColor="White"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start" 
+                       />
+                <Entry Placeholder="Ingrese el estado de la camara"
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="FillAndExpand"
+                       x:Name="EstadoCamaraEntry"
+                       Text="{Binding Estado}"/>
+
+                <Label Text="Modelo:"
+                       FontSize="18"
+                       TextColor="White"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start" 
+                       />
+                <Entry Placeholder="Ingrese el modelo de la camara"
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="FillAndExpand"
+                       x:Name="ModeloCamaraEntry"
+                       Text="{Binding Modelo}"/>
+
+                <Button Text="Agregar Camara"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    Command="{Binding AgregarCamaraCommand}"
+                  />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

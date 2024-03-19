@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.RecuperarContraseña.VCambioContraseña">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#141414">
+
+            <StackLayout Margin="30,10,20,0">
+
+                <Label Text="Cambio de contraseña" TextColor="White" FontSize="20" FontAttributes="Bold"/>
+                <Label Margin="0,0,0,20" FontSize="17" TextColor="White">
+                    Para mantener tu cuenta segura, te recomendamos elegir una contraseña única y segura.
+                </Label>
+
+            </StackLayout>
+
+            <Frame Margin="20,0,20,0" CornerRadius="20" BackgroundColor="#141414">
+                <StackLayout>
+                    <Label Text="Ingresar nueva contraseña:" TextColor="#1da1f2" FontAttributes="Bold" FontSize="15"/>
+                    <Entry Placeholder="Ingresa la nueva contraseña" TextColor="White" PlaceholderColor="White" Margin="0,0,0,0" FontSize="15"/>
+
+                    <Label Text="Confirmar nueva contraseña:" TextColor="#1da1f2" FontAttributes="Bold" FontSize="15"/>
+                    <Entry Placeholder="Ingresa la nueva contraseña" TextColor="White" PlaceholderColor="White" IsPassword="True" Margin="0,0,0,0" FontSize="15"/>
+
+                    <Button Text="Confirmar" BackgroundColor="#064686" TextColor="White" CornerRadius="30" Margin="30,20,30,0" Command="{Binding IrinicioSesionCommand}"/>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.Camara.VGestionCamara"
+             Title="Gestion"
+             BackgroundColor="#141414">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand"
+                 Spacing="15"
+                 Padding="20"
+                 BackgroundColor="#141414">
+
+                <BoxView HeightRequest="2"
+                 BackgroundColor="Gray"
+                 HorizontalOptions="FillAndExpand" Margin="0,2,0,0" />
+
+               <Label Text="Nombre de la camara"
+               FontSize="18"
+               TextColor="White"
+               HorizontalOptions="Start" FontAttributes="Bold"/>
+               <Entry Placeholder="Ingrese la ubicacion de la camara"
+               FontSize="16"
+               TextColor="White"
+               HorizontalOptions="FillAndExpand"
+               x:Name="NombreCamaraEntry"
+               Text="{Binding Ubicacion}" PlaceholderColor="White"/>
+
+               <Label Text="Estado de la camara"
+               FontSize="18"
+               TextColor="White"
+               HorizontalOptions="Start"
+               VerticalOptions="Start" FontAttributes="Bold"/>
+               <Entry Placeholder="Ingrese el estado de la camara"
+               FontSize="16"
+               TextColor="White"
+               HorizontalOptions="FillAndExpand"
+               x:Name="EstadoCamaraEntry"
+               Text="{Binding Estado}" PlaceholderColor="White"/>
+
+               <Label Text="Modelo de la camara"
+               FontSize="18"
+               TextColor="White"
+               HorizontalOptions="Start" FontAttributes="Bold"/>
+                <Entry Placeholder="Ingrese el modelo de la camara"
+               FontSize="16"
+               TextColor="White"
+               HorizontalOptions="FillAndExpand"
+               x:Name="ModeloCamaraEntry"
+               Text="{Binding Modelo}" PlaceholderColor="White"/>
+
+                <Button Text="Editar Camara"
+                TranslationY="100"
+                 BackgroundColor="Gray"
+                 TextColor="White"
+                 Command="{Binding EditarCamaraCommand}"/>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

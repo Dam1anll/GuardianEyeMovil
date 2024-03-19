@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.Trasmision.VTrasmisionCamara">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#141414">
+
+            <StackLayout Margin="30,20,30,0">
+
+                <Grid>
+                    <Label Text="Cámara 1" FontSize="20" TextTransform="None" TextColor="#1da1f2" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"/>
+                    <Image Source="https://i.ibb.co/k8bz9Qm/flecha-izquierda.png" HeightRequest="30" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Margin="0,0,-50,0"/>
+                    <Image Source="https://i.ibb.co/dDQnYqJ/flecha-izquierda-1.png" HeightRequest="30" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Margin="-50,0,0,0"/>
+                </Grid>
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Image Source="https://i.ibb.co/wYkLRys/Image-Pasted-2019-09-10-at-17-52-38-png-3.png" HeightRequest="200"/>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                <StackLayout Margin="0,20,0,0">
+                    <Grid>
+                        <Button Text="Captura" Grid.Row="0" Grid.Column="0" CornerRadius="5" BackgroundColor="#033076" TextColor="White"/>
+                        <Button Text="Video" Grid.Row="0" Grid.Column="1" CornerRadius="5" BackgroundColor="#033076" TextColor="White"/>
+                    </Grid>
+                    <Grid Margin="0,-50,0,0">
+                        <Image Source="https://i.ibb.co/gttgMCS/Arriba.png" HeightRequest="60" Grid.Row="1" Grid.ColumnSpan="2"/>
+                        <Image Source="https://i.ibb.co/gW4QJ3D/Izquierda.png" HeightRequest="60" Grid.Row="2" Grid.Column="0"/>
+                        <Image Source="https://i.ibb.co/c3vmYmj/Derecha.png" HeightRequest="60" Grid.Row="2" Grid.Column="1"/>
+                        <Image Source="https://i.ibb.co/dfctGdF/Abajo.png" HeightRequest="60" Grid.Row="3" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

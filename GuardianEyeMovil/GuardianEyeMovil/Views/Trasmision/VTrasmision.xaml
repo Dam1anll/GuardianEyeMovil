@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.Trasmision.VTrasmision"
+             Title="Transmisión">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#141414">
+            <StackLayout>
+                <Image Source="https://i.ibb.co/wYkLRys/Image-Pasted-2019-09-10-at-17-52-38-png-3.png" HeightRequest="200">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding IrACamaraCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <Grid>
+                <StackLayout  Grid.Row="0" Grid.Column="0">
+                    <Image Source="https://i.ibb.co/1fMb2KC/Man.jpg" HeightRequest="280" Margin="0,-5,-10,0"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="0" Grid.Column="1">
+                    <Image Source="https://i.ibb.co/BPhNkr6/Alien.jpg" HeightRequest="280" Margin="0,-5,5,0"/>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout>
+                <Image Source="https://i.ibb.co/BfDdf6J/Patio.jpg" HeightRequest="200"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

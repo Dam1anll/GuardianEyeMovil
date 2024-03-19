@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.Perfil.VPerfil"
+             Title="Perfil">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#141414">
+
+            <Image Source="https://i.ibb.co/hycjLF8/usuario.png" HeightRequest="100" Margin="0,30,0,0"/>
+
+            <StackLayout>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Nombre: " Grid.Row="0" Grid.Column="0" TextColor="#1da1f2" FontSize="17" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Entry x:Name="nombreEntry"  Text="Damian Lescas Lares" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" Margin="-70,0,0,0" IsEnabled="False"/>
+                </Grid>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Correo:" Grid.Row="0" Grid.Column="0" TextColor="#1da1f2" FontSize="17" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Entry x:Name="correoEntry" Text="damiianll20@gmail.com" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" VerticalOptions="Center" Margin="-70,0,0,0" IsEnabled="False"/>
+                </Grid>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Teléfono:" Grid.Row="0" Grid.Column="0" TextColor="#1da1f2" FontSize="17" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Entry x:Name="telefonoEntry" Text="6442465218" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" VerticalOptions="Center" Margin="-70,0,0,0" IsEnabled="False"/>
+                </Grid>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Lugar:" Grid.Row="0" Grid.Column="0" TextColor="#1da1f2" FontSize="17" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Entry x:Name="lugarEntry" Text="Cd.Obregon, Sonora" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" VerticalOptions="Center" Margin="-70,0,0,0" IsEnabled="False"/>
+                </Grid>
+
+                <Grid>
+                    <Button x:Name="editarButton" Text="Editar" BackgroundColor="#033076" TextColor="White" CornerRadius="30" Margin="20,20,10,0" Grid.Row="0" Grid.Column="0"/>
+                    <Button Text="Eliminar" BackgroundColor="#f85f6a" TextColor="White" CornerRadius="30" Margin="10,20,20,0" Grid.Row="0" Grid.Column="1"/>
+                </Grid>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.MenuDesplegable.VMenuDesplegable"
+             Title="Master">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="SelectedButtonColor">#1da1f2</Color>
+            <Color x:Key="UnselectedButtonColor">#141414</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#141414">
+            <StackLayout Margin="20,10,0,0">
+                <Image Source="https://i.ibb.co/Wtnp1n9/flecha-izquierda.png" HorizontalOptions="Start" Margin="0,10,0,0" HeightRequest="40">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RetrocederCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <StackLayout>
+                <Image Source="https://i.ibb.co/hycjLF8/usuario.png" HeightRequest="60"  VerticalOptions="Start"/>
+                <Label Text="Damian Lescas" TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Label Text="damiianll20@gmail.com" TextColor="White" FontSize="14" VerticalTextAlignment="Center" HorizontalOptions="Center" Margin="0,0,0,50"/>
+            </StackLayout>
+
+            <StackLayout Margin="10,0,0,0">
+                <Button x:Name="btnHome" Text="Home" TextColor="White" FontSize="15" BackgroundColor="{StaticResource UnselectedButtonColor}"  ImageSource="https://i.ibb.co/7vfmgkk/casa.png" Command="{Binding IrHomeCommand}">
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="{StaticResource SelectedButtonColor}" />
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Button x:Name="btnHistorial" Text="Registros" TextColor="White" FontSize="15" BackgroundColor="#141414"  ImageSource="https://i.ibb.co/9cZCD67/carpeta.png" Command="{Binding IrHistorialCommand}">
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="{StaticResource SelectedButtonColor}"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Button x:Name="btnTrasmision" Text="Transmisión" TextColor="White" FontSize="15" BackgroundColor="#141414"  ImageSource="https://i.ibb.co/ZS1W2d5/camara-de-video.png" Command="{Binding IrTrasnmicionCommand}">
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="{StaticResource SelectedButtonColor}" />
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Button x:Name="btnUsuario" Text="Perfil" TextColor="White" FontSize="15" BackgroundColor="#141414"  ImageSource="https://i.ibb.co/2ySZw44/usuario.png" Command="{Binding IrAUsuarioCommand}">
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="{StaticResource SelectedButtonColor}" />
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Button x:Name="btnCamaras" Text="Camaras" TextColor="White" FontSize="15" BackgroundColor="#141414" ImageSource="https://i.ibb.co/jbSzKkh/camara-de-seguridad-4.png" Command="{Binding IrACamarasCommand}">
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="{StaticResource SelectedButtonColor}"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Button Text="Cerrar Sesion" TextColor="White" FontSize="15"  BackgroundColor="#141414" ImageSource="https://i.ibb.co/2ySZw44/usuario.png" Command="{Binding IrCerrarSesionCommand}" Margin="0,100,0,0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.MenuDesplegable.VHome"
+             xmlns:charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             Title="Inicio">
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#141414">
+
+            <StackLayout Margin="20,10,20,0">
+
+                <Label Text="Horas con mas notificaciones" FontSize="17" TextTransform="None" TextColor="#1da1f2" FontAttributes="Bold" Margin="0,10,0,0"/>
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                <StackLayout>
+                    <charts:ChartView x:Name="notificationChart" Margin="-40,10,-40,0" HeightRequest="170"/>
+                </StackLayout>
+
+                <Label Text="Notificaciones Recientes" TextColor="#1da1f2" FontSize="17" FontAttributes="Bold" Margin="0,10,0,0"/>
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                <BoxView Color="Gray" HeightRequest="150" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                <Label Text="Cámaras" TextColor="#1da1f2" FontSize="17" FontAttributes="Bold" Margin="0,10,0,0"/>
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Grid>
+                    <Label Text="Cámara 1" TextColor="White" FontSize="17" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
+                    <Label Text="Actica" TextColor="#7fe1ad" FontSize="17" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"/>
+                    <Label Text="Cámara 2" TextColor="White" FontSize="17" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"/>
+                    <Label Text="Activa" TextColor="#7fe1ad" FontSize="17" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center"/>
+                    <Label Text="Cámara 3" TextColor="White" FontSize="17" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center"/>
+                    <Label Text="Inactiva" TextColor="#f85f6a" FontSize="17" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center"/>
+                </Grid>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

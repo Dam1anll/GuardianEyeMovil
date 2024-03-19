@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.Camara.VListaCamaras"
+             Title="Cámaras"
+             BackgroundColor="#141414">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Spacing="15" Padding="20">
+                    <FlexLayout Wrap="Wrap" JustifyContent="SpaceBetween" AlignItems="Start" AlignContent="Start">
+                        <CollectionView BackgroundColor="#141414" ItemsSource="{Binding ListaCamaras}" x:Name="CamarasCollection">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical"
+                                                 Span="1"
+                                                 VerticalItemSpacing="10"
+                                                 HorizontalItemSpacing="10"/>   
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame WidthRequest="100"
+                                   HeightRequest="120"
+                                   BackgroundColor="#141414"
+                                   CornerRadius="10">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.IrAGestionCamaraCommand, Source={x:Reference CamarasCollection}}" CommandParameter="{Binding .}" />
+                                        </Frame.GestureRecognizers>
+                                        <Grid>
+                                            <BoxView Grid.Row="0" Grid.ColumnSpan="2" Color="Gray" HeightRequest="1" VerticalOptions="CenterAndExpand" Margin="-20,0,-20,18"/>
+                                            <Label Text="Ubicacion:"
+                                           TextColor="White"
+                                           FontSize="15"
+                                           Grid.Row="1"
+                                           Grid.Column="0"/>
+                                            <Label Text="{Binding Ubicacion}"
+                                           TextColor="White"
+                                           FontSize="15"
+                                           Grid.Row="1"
+                                           Grid.Column="1"
+                                           Margin="-60,0,0,0"/>
+                                            <Label Text="Estado:"
+                                           TextColor="White"
+                                           FontSize="15"
+                                           Grid.Row="2"
+                                           Grid.Column="0"
+                                               />
+                                            <Label Text="{Binding Estado}"
+                                           TextColor="White"
+                                           FontSize="15"
+                                           Grid.Row="2"
+                                           Grid.Column="1"
+                                               Margin="-60,0,0,0"/>
+                                            <Label Text="Modelo:"
+                                           TextColor="White"
+                                           FontSize="15"   
+                                           Grid.Row="3"
+                                           Grid.Column="0"/>
+                                            <Label Text="{Binding Modelo}"
+                                           TextColor="White"
+                                           FontSize="15"
+                                           Grid.Row="3"
+                                           Grid.Column="1"
+                                               Margin="-60,0,0,0"/>
+                                            <BoxView Grid.Row="4" Grid.ColumnSpan="2" Color="Gray" HeightRequest="1" VerticalOptions="CenterAndExpand" Margin="-20,0,-20,-18"/>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </FlexLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Margin="30">
+                <Button Text="Agregar Cámara" 
+                        HeightRequest="70"
+                        WidthRequest="170"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center"
+                        CornerRadius="20"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        BackgroundColor="Gray"
+                        Command="{Binding IrAAgregarCamaraCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

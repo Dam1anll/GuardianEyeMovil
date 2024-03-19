@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardianEyeMovil.Views.Registros.VRegistros"
+             Title="Registros">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#141414">
+
+            <Frame BackgroundColor="Gray" HeightRequest="20" Margin="20,30,20,0" CornerRadius="5">
+                <Label Text="Buscar notificación" TextColor="White" FontSize="17"/>
+            </Frame>
+            <StackLayout>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Cámara 1" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Label Text="13/02/2024" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Image Source="https://i.ibb.co/DDP3VRH/izquierda.png" Grid.Row="0" Grid.Column="2" HeightRequest="17" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding IrANotificacionCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Cámara 1" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Label Text="14/02/2024" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Image Source="https://i.ibb.co/DDP3VRH/izquierda.png" Grid.Row="0" Grid.Column="2" HeightRequest="17" VerticalOptions="Center"/>
+                </Grid>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Cámara 2" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Label Text="14/02/2024" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Image Source="https://i.ibb.co/DDP3VRH/izquierda.png" Grid.Row="0" Grid.Column="2" HeightRequest="17" VerticalOptions="Center"/>
+                </Grid>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Cámara 3" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Label Text="15/02/2024" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Image Source="https://i.ibb.co/DDP3VRH/izquierda.png" Grid.Row="0" Grid.Column="2" HeightRequest="17" VerticalOptions="Center"/>
+                </Grid>
+
+                <BoxView Color="#dee2e6" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,10,20,0"/>
+                <Grid Margin="20,10,20,0">
+                    <Label Text="Cámara 2" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Label Text="16/02/2024" Grid.Row="0" Grid.Column="1" TextColor="White" FontSize="17" VerticalOptions="Center"/>
+                    <Image Source="https://i.ibb.co/DDP3VRH/izquierda.png" Grid.Row="0" Grid.Column="2" HeightRequest="17" VerticalOptions="Center"/>
+                </Grid>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
