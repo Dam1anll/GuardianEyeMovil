@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GuardianEyeMovil.ViewModels.Registros;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,6 +17,7 @@ namespace GuardianEyeMovil.Views.Registros
         {
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, false);
+            BindingContext = new VMRegistros(Navigation);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using GuardianEyeMovil.Views;
+using GuardianEyeMovil.Views.RecuperarContraseña;
 
 namespace GuardianEyeMovil.ViewModels
 {
@@ -35,14 +36,7 @@ namespace GuardianEyeMovil.ViewModels
         #region PROCESOS
         public async Task IrAInicioSesion()
         {
-            if (Correo != null && Contraseña != null)
-            {
-                await Navigation.PushAsync(new VInicioSesion());
-            }
-            else
-            {
-                await Application.Current.MainPage.DisplayAlert("Error", "Ingresa los datos necesarios", "Ok");
-            }
+            await Navigation.PushAsync(new VInicioSesion());
         }
         #endregion
         #region COMANDOS
