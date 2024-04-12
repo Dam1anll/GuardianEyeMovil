@@ -7,6 +7,5 @@ namespace GuardianEyeMovil.Models
     public class TokenResponse
     {
         public string Token { get; set; }
-        // Agrega más propiedades si la respuesta contiene más información
     }
 }

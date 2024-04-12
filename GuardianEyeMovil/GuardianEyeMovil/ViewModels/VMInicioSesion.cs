@@ -39,44 +39,43 @@ namespace GuardianEyeMovil.ViewModels
         }
         #endregion
         #region PROCESOS
-        public async Task IniciarSesion()
-        {
-            var credenciales = new LoginModel
-            {
-                Correo = Correo,
-                Contraseña = Contra
-            };
+        //public async Task IniciarSesion()
+        //{
+        //    try
+        //    {
+        //        var loginModel = new MUsuario
+        //        {
+        //            Correo = Correo,
+        //            Contraseña = Contra
+        //        };
 
-            var jsonCredenciales = JsonConvert.SerializeObject(credenciales);
+        //        var json = JsonConvert.SerializeObject(loginModel);
+        //        var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            using (var client = new HttpClient())
-            {
-                var url = "http://guardianeyeapi.somee.com/Api/Usuario/login";
+        //        using (var httpClient = new HttpClient())
+        //        {
+        //            var response = await httpClient.PostAsync("http://guardianeyeapi.somee.com/Api/Usuario/login", content);
 
-                try
-                {
-                    var content = new StringContent(jsonCredenciales, Encoding.UTF8, "application/json");
-                    var response = await client.PostAsync(url, content);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var tokenJson = await response.Content.ReadAsStringAsync();
-                        var token = JsonConvert.DeserializeObject<TokenResponse>(tokenJson);
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                var responseContent = await response.Content.ReadAsStringAsync();
 
-                        AppSettings.Token = token.Token;
+        //                var tokenResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
+        //                var token = tokenResponse.Token.Value;
 
-                        await IrAHome();
-                    }
-                    else
-                    {
-                        await Application.Current.MainPage.DisplayAlert("Error", "Credenciales incorrectas", "Aceptar");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "Aceptar");
-                }
-            }
-        }
+        //                await IrAHome();
+        //            }
+        //            else
+        //            {
+        //                await Application.Current.MainPage.DisplayAlert("Error", "Correo o contraseña incorrectos.", "OK");
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+        //    }
+        //}
         public async Task IrARegistro()
         {
             await Navigation.PushAsync(new VRegistro());
@@ -99,7 +98,7 @@ namespace GuardianEyeMovil.ViewModels
         public ICommand IrARegistroCommand => new Command(async () => await IrARegistro());
         public ICommand IrAHomeCommand => new Command(async () => await IrAHome());
         public ICommand IrSolicitudCommand => new Command(async () => await IrSolicitud());
-        public ICommand IniciarSesionCommand => new Command(async () => await IniciarSesion());
+        //public ICommand IniciarSesionCommand => new Command(async () => await IniciarSesion());
 
         #endregion
     }
