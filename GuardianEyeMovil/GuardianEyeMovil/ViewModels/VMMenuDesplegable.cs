@@ -41,7 +41,7 @@ namespace GuardianEyeMovil.ViewModels
         public async Task IrTransmicion()
         {
             App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new VTrasmision());
+            await App.MasterDet.Detail.Navigation.PushAsync(new VTrasmisionCamara());
         }
         public async Task IrUsuario()
         {
@@ -54,9 +54,9 @@ namespace GuardianEyeMovil.ViewModels
             await App.MasterDet.Detail.Navigation.PushAsync(new VListaCamaras());
         }
 
-        #pragma warning disable CS1998 // El método asincrónico carece de operadores "await" y se ejecutará de forma sincrónica
+        #pragma warning disable CS1998 
         public async Task Retroceder()
-        #pragma warning restore CS1998 // El método asincrónico carece de operadores "await" y se ejecutará de forma sincrónica
+        #pragma warning restore CS1998 
         {
             App.MasterDet.IsPresented = false;
 

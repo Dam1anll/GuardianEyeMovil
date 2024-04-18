@@ -26,7 +26,7 @@
                         <Label Text="Recuerdame" TextColor="White" Margin="0,5,0,0"/>
                     </StackLayout>
 
-                    <Button Text="Iniciar Sesión" BackgroundColor="#064686" TextColor="White" CornerRadius="30" Margin="10,20,10,0" Command="{Binding IrAHomeCommand}"/>
+                    <Button Text="Iniciar Sesión" BackgroundColor="#064686" TextColor="White" CornerRadius="30" Margin="10,20,10,0" Command="{Binding IniciarSesionCommand}"/>
 
                     <StackLayout Margin="0,20,0,0">
                         <Grid>

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microcharts;
 using Microcharts.Forms;
 using SkiaSharp;
+using GuardianEyeMovil.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,6 +21,7 @@ namespace GuardianEyeMovil.Views.MenuDesplegable
         public VHome()
         {
             InitializeComponent();
+            BindingContext = new VMHome(Navigation);
             NavigationPage.SetHasBackButton(this, false);
 
             var entries = new List<ChartEntry>
@@ -27,35 +29,35 @@ namespace GuardianEyeMovil.Views.MenuDesplegable
                 new ChartEntry(200)
                 {
                     Label = "12:00am",
-                    ValueLabel = "200",
+                    ValueLabel = "2",
                     Color = SKColor.Parse("#861B2D"),
                     ValueLabelColor = SKColor.Parse("#FFFFFF"),
                 },
                 new ChartEntry(100)
                 {
                     Label = "11:00am",
-                    ValueLabel = "100",
+                    ValueLabel = "4",
                     Color = SKColor.Parse("#7252AA"),
                     ValueLabelColor = SKColor.Parse("#FFFFFF")
                 },
                 new ChartEntry(150)
                 {
                     Label = "05:00pm",
-                    ValueLabel = "150",
+                    ValueLabel = "3",
                     Color = SKColor.Parse("#107C10"),
                     ValueLabelColor = SKColor.Parse("#FFFFFF")
                 },
                 new ChartEntry(70)
                 {
                     Label = "03:30pm",
-                    ValueLabel = "70",
+                    ValueLabel = "1",
                     Color = SKColor.Parse("#EF83EF"),
                     ValueLabelColor = SKColor.Parse("#FFFFFF")
                 },
                 new ChartEntry(300)
                 {
                     Label = "01:00am",
-                    ValueLabel = "300",
+                    ValueLabel = "6",
                     Color = SKColor.Parse("#1da1f2"),
                     ValueLabelColor = SKColor.Parse("#FFFFFF")
                 }

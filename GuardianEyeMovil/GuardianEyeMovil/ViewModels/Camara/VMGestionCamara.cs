@@ -66,61 +66,66 @@ namespace GuardianEyeMovil.ViewModels.Camara
         {
             try
             {
-                var confirmarEliminar = await DisplayAlert("Confirmar", "¿Estás seguro de que deseas eliminar esta cámara?", "Sí", "No");
+                bool confirmarEliminar = await Application.Current.MainPage.DisplayAlert("Confirmar", "¿Estás seguro de que deseas eliminar esta cámara?", "Sí", "No");
                 if (confirmarEliminar)
                 {
-                    Uri request = new Uri("http://guardianeyeapi.somee.com/Api/Camara/" + Id);
-                    var client = new HttpClient();
-                    var response = await client.DeleteAsync(request);
-
-                    if (response.IsSuccessStatusCode)
+                    Uri requestUri = new Uri($"http://guardianeyeapi.somee.com/Api/Camara/{Id}");
+                    using (HttpClient client = new HttpClient())
                     {
-                        await DisplayAlert("Mensaje", "Cámara eliminada correctamente", "Ok");
-                        MessagingCenter.Send(this, "ActualizarListaCamaras");
-                        await Volver();
-                    }
-                    else
-                    {
-                        await DisplayAlert("Mensaje", "Error al eliminar la cámara", "Ok");
+                        HttpResponseMessage response = await client.DeleteAsync(requestUri);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            await Application.Current.MainPage.DisplayAlert("Mensaje", "Cámara eliminada correctamente", "Ok");
+                            MessagingCenter.Send(this, "ActualizarListaCamaras");
+                            await Volver();
+                        }
+                        else
+                        {
+                            await Application.Current.MainPage.DisplayAlert("Mensaje", "Error al eliminar la cámara", "Ok");
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "Ok");
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "Ok");
             }
         }
+
         public async Task EditarCamara()
         {
             try
             {
                 MCamara editarCamara = new MCamara()
                 {
+                    Id = Id,
                     Ubicacion = Ubicacion,
                     Estado = Estado,
                     Modelo = Modelo
                 };
 
-                Uri Request = new Uri("http://guardianeyeapi.somee.com/Api/Camara/" + Id);
-                var client = new HttpClient();
-                var json = JsonConvert.SerializeObject(editarCamara);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await client.PutAsync(Request, content);
+                Uri requestUri = new Uri($"http://guardianeyeapi.somee.com/Api/Camara/{Id}");
+                using (HttpClient client = new HttpClient())
+                {
+                    string json = JsonConvert.SerializeObject(editarCamara);
+                    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                if (response.IsSuccessStatusCode)
-                {
-                    await DisplayAlert("Mensaje", "Cámara actualizada correctamente", "Ok");
-                    MessagingCenter.Send(this, "ActualizarListaCamaras");
-                    await Volver();
-                }
-                else
-                {
-                    await DisplayAlert("Mensaje", "Error al actualizar la cámara", "Ok");
+                    HttpResponseMessage response = await client.PutAsync(requestUri, content);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Mensaje", "Cámara actualizada correctamente", "Ok");
+                        MessagingCenter.Send(this, "ActualizarListaCamaras");
+                        await Volver();
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Mensaje", "Error al actualizar la cámara", "Ok");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "Ok");
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "Ok");
             }
         }
 

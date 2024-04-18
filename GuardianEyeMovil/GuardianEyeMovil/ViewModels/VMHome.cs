@@ -1,6 +1,5 @@
 ﻿using GuardianEyeMovil.Models;
-using GuardianEyeMovil.ViewModels.Camara;
-using GuardianEyeMovil.Views.Camara;
+using GuardianEyeMovil.Views.Registros;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,22 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Newtonsoft.Json;
-using GuardianEyeMovil.Views.Registros;
 using Microcharts;
+using System.Linq;
 
-namespace GuardianEyeMovil.ViewModels.Registros
+namespace GuardianEyeMovil.ViewModels
 {
-    public class VMRegistros : BaseViewModel
+    public class VMHome : BaseViewModel
     {
         #region VARIABLES
         //http://guardianeyeapi.somee.com/Api/Camara
         private ObservableCollection<MNotificacion> _listaNotificacion;
         #endregion
         #region CONSTRUCTOR
-        public VMRegistros(INavigation navigation)
+        public VMHome(INavigation navigation)
         {
             Navigation = navigation;
-            ObtenerLista();
         }
         #endregion
         #region OBJETOS
@@ -39,7 +37,6 @@ namespace GuardianEyeMovil.ViewModels.Registros
             }
 
         }
-
         #endregion
         #region PROCESOS
         public async Task ObtenerLista()
@@ -58,18 +55,9 @@ namespace GuardianEyeMovil.ViewModels.Registros
                 await DisplayAlert("Mensaje", "Error al cargar la lista de Notificaciones", "Ok");
             }
         }
-        public void ProcesoSimple()
-        {
-
-        }
-        public async Task IrANotificacion(MNotificacion mNotificacion)
-        {
-            await Navigation.PushAsync(new VNotificacion(mNotificacion));
-        }
 
         #endregion
         #region COMANDOS
-        public ICommand IrANotificacionCommand => new Command<MNotificacion>(async (n) => await IrANotificacion(n));
         #endregion
     }
 }

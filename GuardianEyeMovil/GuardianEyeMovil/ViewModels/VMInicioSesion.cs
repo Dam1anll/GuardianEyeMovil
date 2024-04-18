@@ -32,50 +32,14 @@ namespace GuardianEyeMovil.ViewModels
             get { return _correo; }
             set { SetValue(ref _correo, value); }
         }
-        public string Contra
+        public string Contraseña
         {
             get { return _contra; }
             set { SetValue(ref _contra, value); }
         }
         #endregion
         #region PROCESOS
-        //public async Task IniciarSesion()
-        //{
-        //    try
-        //    {
-        //        var loginModel = new MUsuario
-        //        {
-        //            Correo = Correo,
-        //            Contraseña = Contra
-        //        };
-
-        //        var json = JsonConvert.SerializeObject(loginModel);
-        //        var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-        //        using (var httpClient = new HttpClient())
-        //        {
-        //            var response = await httpClient.PostAsync("http://guardianeyeapi.somee.com/Api/Usuario/login", content);
-
-        //            if (response.IsSuccessStatusCode)
-        //            {
-        //                var responseContent = await response.Content.ReadAsStringAsync();
-
-        //                var tokenResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
-        //                var token = tokenResponse.Token.Value;
-
-        //                await IrAHome();
-        //            }
-        //            else
-        //            {
-        //                await Application.Current.MainPage.DisplayAlert("Error", "Correo o contraseña incorrectos.", "OK");
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
-        //    }
-        //}
+       
         public async Task IrARegistro()
         {
             await Navigation.PushAsync(new VRegistro());
@@ -93,12 +57,51 @@ namespace GuardianEyeMovil.ViewModels
             Application.Current.MainPage = paginaPrincipal;
         }
 
+        private async Task IniciarSesion()
+        {
+            try
+            {
+                var httpClient = new HttpClient();
+                var url = "http://guardianeyeapi.somee.com/Api/Usuario/login";
+
+                var loginData = new
+                {
+                    Correo = Correo,
+                    Contraseña = Contraseña
+                };
+
+                var json = JsonConvert.SerializeObject(loginData);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await httpClient.PostAsync(url, content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var token = JsonConvert.DeserializeObject<TokenResponse>(responseContent).Token;
+                    await IrAHome();
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Correo o contraseña incorrectas", "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+
+        public class TokenResponse
+        {
+            public string Token { get; set; }
+        }
         #endregion
         #region COMANDOS
         public ICommand IrARegistroCommand => new Command(async () => await IrARegistro());
         public ICommand IrAHomeCommand => new Command(async () => await IrAHome());
         public ICommand IrSolicitudCommand => new Command(async () => await IrSolicitud());
-        //public ICommand IniciarSesionCommand => new Command(async () => await IniciarSesion());
+        public ICommand IniciarSesionCommand => new Command(async () => await IniciarSesion());
 
         #endregion
     }

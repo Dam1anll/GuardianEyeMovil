@@ -51,13 +51,14 @@
 
                 <Button Text="Editar Camara"
                 TranslationY="100"
-                 BackgroundColor="Gray"
+                 BackgroundColor="Green"
                  TextColor="White"
-                 Command="{Binding EditarCamaraCommand}"/>
+                 Command="{Binding EditarCamaraCommand}"
+                 />
                 
                 <Button Text="Eliminar Camara"
                 TranslationY="100"
-                 BackgroundColor="Gray"
+                 BackgroundColor="Red"
                  TextColor="White"
                  Command="{Binding EliminarCamaraCommand}"/>
                 
