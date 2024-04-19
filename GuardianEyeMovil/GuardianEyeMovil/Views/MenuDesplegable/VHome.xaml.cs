@@ -23,60 +23,86 @@ namespace GuardianEyeMovil.Views.MenuDesplegable
             InitializeComponent();
             BindingContext = new VMHome(Navigation);
             NavigationPage.SetHasBackButton(this, false);
+            VMHome viewModel = new VMHome(Navigation);
+            BindingContext = viewModel;
 
-            var entries = new List<ChartEntry>
+            viewModel.ObtenerLista().ContinueWith(t =>
             {
-                new ChartEntry(200)
+                // Verifica si la tarea se completó con éxito y no se lanzó ninguna excepción
+                if (t.Status == TaskStatus.RanToCompletion)
                 {
-                    Label = "12:00am",
-                    ValueLabel = "2",
-                    Color = SKColor.Parse("#861B2D"),
-                    ValueLabelColor = SKColor.Parse("#FFFFFF"),
-                },
-                new ChartEntry(100)
-                {
-                    Label = "11:00am",
-                    ValueLabel = "4",
-                    Color = SKColor.Parse("#7252AA"),
-                    ValueLabelColor = SKColor.Parse("#FFFFFF")
-                },
-                new ChartEntry(150)
-                {
-                    Label = "05:00pm",
-                    ValueLabel = "3",
-                    Color = SKColor.Parse("#107C10"),
-                    ValueLabelColor = SKColor.Parse("#FFFFFF")
-                },
-                new ChartEntry(70)
-                {
-                    Label = "03:30pm",
-                    ValueLabel = "1",
-                    Color = SKColor.Parse("#EF83EF"),
-                    ValueLabelColor = SKColor.Parse("#FFFFFF")
-                },
-                new ChartEntry(300)
-                {
-                    Label = "01:00am",
-                    ValueLabel = "6",
-                    Color = SKColor.Parse("#1da1f2"),
-                    ValueLabelColor = SKColor.Parse("#FFFFFF")
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        CalcularNotificacionesPorHora(viewModel);
+                    });
                 }
-            };
+                else if (t.IsFaulted)
+                {
+                    // Maneja la tarea con errores (opcional)
+                    // Puedes mostrar un mensaje de error o realizar otras acciones
+                    // Si lo deseas
+                }
+            });
 
-            var chart = new LineChart()
-            {
-                Entries = entries,
-                BackgroundColor = SKColor.Parse("#141414"),
-                LineMode = LineMode.Straight,
-                LineSize = 10,
-                PointMode = PointMode.Square,
-                PointSize = 20,
-                LabelOrientation = Microcharts.Orientation.Horizontal,
-                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelTextSize = 30
-            };
+            //var entries = new List<ChartEntry>
+            //{
+            //    new ChartEntry(200)
+            //    {
+            //        Label = "12:00am",
+            //        ValueLabel = "2",
+            //        Color = SKColor.Parse("#861B2D"),
+            //        ValueLabelColor = SKColor.Parse("#FFFFFF"),
+            //    },
+            //    new ChartEntry(100)
+            //    {
+            //        Label = "11:00am",
+            //        ValueLabel = "4",
+            //        Color = SKColor.Parse("#7252AA"),
+            //        ValueLabelColor = SKColor.Parse("#FFFFFF")
+            //    },
+            //    new ChartEntry(150)
+            //    {
+            //        Label = "05:00pm",
+            //        ValueLabel = "3",
+            //        Color = SKColor.Parse("#107C10"),
+            //        ValueLabelColor = SKColor.Parse("#FFFFFF")
+            //    },
+            //    new ChartEntry(70)
+            //    {
+            //        Label = "03:30pm",
+            //        ValueLabel = "1",
+            //        Color = SKColor.Parse("#EF83EF"),
+            //        ValueLabelColor = SKColor.Parse("#FFFFFF")
+            //    },
+            //    new ChartEntry(300)
+            //    {
+            //        Label = "01:00am",
+            //        ValueLabel = "6",
+            //        Color = SKColor.Parse("#1da1f2"),
+            //        ValueLabelColor = SKColor.Parse("#FFFFFF")
+            //    }
+            //};
 
-            notificationChart.Chart = chart;
+            //var chart = new LineChart()
+            //{
+            //    Entries = entries,
+            //    BackgroundColor = SKColor.Parse("#141414"),
+            //    LineMode = LineMode.Straight,
+            //    LineSize = 10,
+            //    PointMode = PointMode.Square,
+            //    PointSize = 20,
+            //    LabelOrientation = Microcharts.Orientation.Horizontal,
+            //    ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+            //    LabelTextSize = 30
+            //};
+
+            //notificationChart.Chart = chart;
+        }
+
+        private void CalcularNotificacionesPorHora(VMHome viewModel)
+        {
+            // Llama al método CalcularNotificacionesPorHora con la instancia de ChartView
+            viewModel.CalcularNotificacionesPorHora(notificationChart);
         }
     }
 }

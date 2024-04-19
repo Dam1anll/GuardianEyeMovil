@@ -44,6 +44,10 @@
                     </CollectionView>
                 </StackLayout>
             </ScrollView>
+
+            <Button Command="{Binding CrearANotificacionCommand}" BackgroundColor="#1da1f2" Text="Crear Notificacion"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

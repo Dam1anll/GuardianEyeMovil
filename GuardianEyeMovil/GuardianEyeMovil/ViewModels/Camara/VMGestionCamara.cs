@@ -69,7 +69,7 @@ namespace GuardianEyeMovil.ViewModels.Camara
                 bool confirmarEliminar = await Application.Current.MainPage.DisplayAlert("Confirmar", "¿Estás seguro de que deseas eliminar esta cámara?", "Sí", "No");
                 if (confirmarEliminar)
                 {
-                    Uri requestUri = new Uri($"http://guardianeyeapi.somee.com/Api/Camara/{Id}");
+                    Uri requestUri = new Uri($"http://guardianeyeapi.somee.com/Api/Camara/" + Id);
                     using (HttpClient client = new HttpClient())
                     {
                         HttpResponseMessage response = await client.DeleteAsync(requestUri);
@@ -104,7 +104,7 @@ namespace GuardianEyeMovil.ViewModels.Camara
                     Modelo = Modelo
                 };
 
-                Uri requestUri = new Uri($"http://guardianeyeapi.somee.com/Api/Camara/{Id}");
+                Uri requestUri = new Uri($"http://guardianeyeapi.somee.com/Api/Camara/" + Id);
                 using (HttpClient client = new HttpClient())
                 {
                     string json = JsonConvert.SerializeObject(editarCamara);
