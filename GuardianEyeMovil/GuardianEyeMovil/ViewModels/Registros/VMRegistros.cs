@@ -27,7 +27,7 @@ namespace GuardianEyeMovil.ViewModels.Registros
         public VMRegistros(INavigation navigation)
         {
             Navigation = navigation;
-            _botClient = new TelegramBotClient("6834365170:AAF4oe0JEMX-14EyigjBqnL8eR3KGyn4fqo");
+            _botClient = new TelegramBotClient("");
             ObtenerLista();
         }
         #endregion
@@ -100,7 +100,7 @@ namespace GuardianEyeMovil.ViewModels.Registros
 
         public async Task EnviarNotificacionTelegram(MNotificacion nuevaNotificacion)
         {
-            const string chatId = "7055111052";
+            const string chatId = "";
             var mensajeTelegram = new StringBuilder();
             mensajeTelegram.AppendLine(nuevaNotificacion.Mensaje);
 
