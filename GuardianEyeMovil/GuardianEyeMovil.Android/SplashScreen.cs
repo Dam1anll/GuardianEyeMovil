@@ -12,7 +12,7 @@ using System.Text;
 
 namespace GuardianEyeMovil.Droid
 {
-    [Activity(Label = "Guardian Eye", Icon = "@mipmap/icon", Theme = "@style/nuevoTema", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize)]
+    [Activity(Label = "Guardian Eye", Icon = "@drawable/GuardianEyeIcon", Theme = "@style/nuevoTema", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize)]
     public class SplashScreen : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
